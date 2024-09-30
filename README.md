@@ -7,12 +7,13 @@ This is my first full-stack application, a simple yet functional weather app tha
 ## Features
 
 - **Current Weather**: Displays the current temperature, weather condition, and location information.
-- **Forecast**: Provides a 6-day weather forecast with maximum and minimum temperatures.
+- **Forecast**: Provides a 7-day weather forecast with maximum and minimum temperatures.
 - **User Input**: Users can enter any location to retrieve the weather data.
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS
+- **Backend**: Javascript
 - **APIs**:
   - Open Meteo API for weather data
   - Wikipedia API for location images
