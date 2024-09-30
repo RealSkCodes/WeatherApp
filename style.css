@@ -1,0 +1,174 @@
+* {
+  font-family: Poppins, sans-serif;
+}
+body {
+  background-image: url(./images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+/* The main container */
+#mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* The input container for location name and button */
+#inputContainer {
+  background: rgba(216, 72, 72, 0.103);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgb(24, 22, 22);
+  width: 25vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.4s;
+}
+#locationName {
+  padding: 10px 0 0 10px;
+  background: rgba(192, 183, 183, 0.308);
+  color: rgb(203, 216, 228);
+  border-radius: 7px;
+  outline: none;
+  width: 15vw;
+  height: 5vh;
+  transition-duration: 0.4s;
+  font-size: 1.8rem;
+  resize: none;
+  margin: 5px;
+}
+#locationNameButton {
+  font-size: 1.2rem;
+  width: 7vw;
+  height: 5vh;
+  transition-duration: 0.4s;
+  background-color: #00dbde;
+  color: white;
+  background-image: linear-gradient(90deg, #6b8a8a 0%, #396856 100%);
+  border-radius: 7px;
+  margin: 5px;
+  border: 2px solid rgb(63, 63, 63);
+}
+#locationNameButton:hover {
+  background-image: linear-gradient(90deg, #4e463e 0%, #182c24 100%);
+  color: white;
+  cursor: pointer;
+}
+#locationNameButton:active {
+  transform: scale(0.85); /* Reduce size on click */
+}
+
+/* The today's Div card */
+#todayDiv {
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgb(15, 17, 17);
+  width: 12vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-end; /* Align items at the bottom */
+  padding: 5px; /* Add some padding to avoid items touching the edges */
+  transition-duration: 0.4s;
+}
+#todayDiv:hover,
+#forecastDiv0:hover,
+#forecastDiv1:hover,
+#forecastDiv2:hover,
+#forecastDiv3:hover,
+#forecastDiv4:hover,
+#forecastDiv5:hover,
+#inputContainer:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 105, 180, 0.8); /* Intensify glow on hover */
+}
+/* Adding a pulsating glow effect */
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 105, 180, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 105, 180, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 105, 180, 0.5);
+  }
+}
+.todayTemperature,
+.todayWeather,
+.todayMaxTemp,
+.todayMinTemp,
+.todayLocation,
+.todayDate {
+  color: whitesmoke;
+  flex: 0 0 auto; /* Prevent items from growing or shrinking */
+  text-align: center;
+  margin: 0 0 3px 0; /* 3px gap below each item */
+}
+.todayTemperature,
+.todayWeather {
+  font-size: 1.8rem; /* Slightly larger font size */
+  font-weight: bold; /* Make the text bold */
+  background: linear-gradient(45deg, #ff5151, #e6e6e6); /* Add a gradient background */
+  background-clip: text;
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the text color transparent to reveal the gradient */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+.todayDate {
+  margin-bottom: 0; /* Remove margin from the last item */
+}
+
+/* The forcast div cards */
+#forecastContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#forecastDiv0,
+#forecastDiv1,
+#forecastDiv2,
+#forecastDiv3,
+#forecastDiv4,
+#forecastDiv5 {
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgb(15, 17, 17);
+  width: 12vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-end; /* Align items at the bottom */
+  padding: 5px; /* Add some padding to avoid items touching the edges */
+  transition-duration: 0.4s;
+}
+.forecastWeather,
+.forecastMaxTemp,
+.forecastMinTemp,
+.forecastDate {
+  color: whitesmoke;
+  flex: 0 0 auto; /* Prevent items from growing or shrinking */
+  text-align: center;
+  margin: 0 0 3px 0; /* 3px gap below each item */
+}
+.forecastWeather {
+  font-size: 1.8rem; /* Slightly larger font size */
+  font-weight: bold; /* Make the text bold */
+  background: linear-gradient(45deg, #ff5151, #e6e6e6); /* Add a gradient background */
+  background-clip: text;
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the text color transparent to reveal the gradient */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
